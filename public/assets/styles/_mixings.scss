@@ -1,0 +1,20 @@
+@mixin background-opacity($color, $opacity){
+  background: $color; /* The Fallback */
+  background: rgba($color, $opacity);
+}
+
+@mixin border-opacity($color,$stroke, $opacity){
+  border: $stroke solid rgba($color, $opacity);
+}
+
+@mixin rotate($degree){
+  -ms-transform: rotate($degree);
+  -webkit-transform: rotate($degree);
+  transform: rotate($degree);
+}
+@mixin reset-positions(){
+  left: inherit;
+  top: inherit;
+  right: inherit;
+  bottom: inherit;
+}
