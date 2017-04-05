@@ -1,0 +1,35 @@
+.main-section{
+  background: $brand-color;
+  height:100vh;
+
+}
+
+.my-container{
+  background: $white-color;
+  @include boxShadow;
+}
+.image-container{
+  width:100%;
+  height:600px;
+  position: relative;
+  .my-image{
+    position: absolute;
+    top:0;
+    left:0;
+  }
+  .my-mask{
+    position: absolute;
+    top: 0;
+    left:0;
+    background:black;
+    /*circle{
+      cx:50px;
+      cy:50px;
+      r:40px;
+      transition: r 200ms linear;
+      &:hover{
+        r:80px;
+      }
+    }*/
+  }
+}

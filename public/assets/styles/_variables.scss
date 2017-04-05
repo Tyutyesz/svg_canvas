@@ -1,60 +1,101 @@
-/***********************************************************/
+///////////////////////////////////////////////////////////////
 //
-// Fonts
+//Colors
 //
-/***********************************************************/
+///////////////////////////////////////////////////////////////
 
+$default-color: #2BBBAD;
+$default-color-dark: #00695c;
+$primary-color: #4285F4;
+$primary-color-dark: #0d47a1;
+$secondary-color: #aa66cc;
+$secondary-color-dark: #9933CC;
+$white-color: #ffffff;
+$grey-color: #eeeeee;
+$brand-color: #6e00ff;
 
-$small-font-size:     10px;
-$footer-small-size:   11px;
-$base-font-size:      12px;
-$tagline-font-size:   16px;
-$regular-font-size:   18px;
-$paragraph-size:      14px;
-$h2-size:             42px;
+$opacity-grey: rgba(238,238,238,0.5);
+$box-shadow-color:rgba(50, 50, 50, 0.5);
 
-$year-header-sm-size: 120px;
-$year-header-size:    180px;
-
-//Large screen
-$small-font-size-lg:     20px;
-$base-font-size-lg:      24px;
-$regular-font-size-lg:   36px;
-$paragraph-size-lg:      28px;
-$h2-size-lg:             84px;
-
-$year-header-sm-size-lg: 240px;
-$year-header-size-lg:    360px;
-
-
-/***********************************************************/
+///////////////////////////////////////////////////////////////
 //
-// Colors
+//Fonts
 //
-/***********************************************************/
+///////////////////////////////////////////////////////////////
+$regular-font: "Opensans-Regular" Helvetica, arial, sans-serif;
+$bold-font: "Opensans-Bold" Helvetica, arial, sans-serif;
+$light-font: "Opensans-Light" Helvetica, arial, sans-serif;
 
-$gold-color:        #AF9352;
-$orange-color:      #FF5700;
-$sec-orange:        #ff7a35;
-$white-color:       #FFFFFF;
-$cream-color:       #F4F0E6;
-$dark-color:        #1B0D0B;
-$dark-cream-color:  #EFE9DD;
-$background-color:  #F3EFE6;
-$dark-brown:        #564227;
-$active-menu-color: #CFBE97;
 
-/***********************************************************/
+///////////////////////////////////////////////////////////////
 //
-// Custom Grids
+//Grid
 //
-/***********************************************************/
+///////////////////////////////////////////////////////////////
+$screen-xs: 480px;
+$screen-sm: 768px;
 
 
-$xs-devices:        400px;
-$xs-viewport:       480px;
-$gh-sm-viewport:    769px;
-$desktop-viewport:  1100px;
-$large-viewport:    1280px;
-$big-screen:        2000px;
-$extra-big-screen:  2500px;
+///////////////////////////////////////////////////////////////
+//
+//Buttons
+//
+///////////////////////////////////////////////////////////////
+
+.btn-my{
+  border-radius: 0;
+}
+.btn-my-default{
+  background-color: $default-color;
+  color:$white-color;
+  &:hover, .active{
+    background-color: $default-color-dark;
+    color:$white-color;
+  }
+}
+.btn-my-primary{
+  background-color:$primary-color;
+  color: $white-color;
+  &:hover{
+    background-color: $primary-color-dark;
+    color:$white-color;
+  }
+}
+.btn-transparent{
+  border:none;
+  background-color: transparent;
+  outline: none;
+  padding: 5px 10px;
+  font-size: 20px;
+  &:hover{
+    color:$white-color;
+  }
+  &:focus, :active{
+    outline:none;
+  }
+}
+
+
+
+///////////////////////////////////////////////////////////////
+//
+//Constants
+//
+///////////////////////////////////////////////////////////////
+
+.no-side{
+  padding:0;
+}
+.need-top-sm{
+  margin-top:10px;
+}
+.my-input{
+  border-radius: 0;
+}
+
+
+@media screen and (max-width: $screen-sm){
+  .no-xs-side{
+    padding:0;
+  }
+}
