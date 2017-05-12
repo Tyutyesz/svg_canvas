@@ -20,26 +20,28 @@ document.body.appendChild( renderer.domElement );
 //Image texture
 THREE.ImageUtils.crossOrigin = '';
 var texture = THREE.ImageUtils.loadTexture('/assets/images/stock1.jpeg');
+var texture2 = THREE.ImageUtils.loadTexture('/assets/images/logo1.PNG');
 texture.anisotropy = renderer.getMaxAnisotropy();
+texture2.anisotropy = renderer.getMaxAnisotropy();
 
 //Cube
 var geometry = new THREE.BoxGeometry( 1, 1, 1 );
 var material = new THREE.MeshFaceMaterial([
 
     new THREE.MeshBasicMaterial({
-        color: 0x6e00ff
+        map: texture2
     }),
     new THREE.MeshBasicMaterial({
-        color: 0x6e00ff
+        map: texture2
     }),
     new THREE.MeshBasicMaterial({
-        color: 0x6e00ff
+        map: texture2
     }),
     new THREE.MeshBasicMaterial({
-        color: 0x6e00ff
+        map: texture2
     }),
     new THREE.MeshBasicMaterial({
-        color: 0x6e00ff
+        map: texture2
     }),
     new THREE.MeshBasicMaterial({
         map: texture
@@ -50,7 +52,10 @@ var cube = new THREE.Mesh( geometry, material );
 cube.rotateY(0.5);
 cube.rotateX(0.5);
 scene.add( cube );
+cube.position.x = 4;
 
+var cubeMelkweg = new THREE.Mesh(geometry, material);
+scene.add(cubeMelkweg);
 
 //Create random cubes
 function getRandomPosition(min, max) {
@@ -63,30 +68,30 @@ function createCubes(){
     var materialRand = new THREE.MeshFaceMaterial([
 
         new THREE.MeshBasicMaterial({
-            color: 0x6e00ff
+            map: texture2
         }),
         new THREE.MeshBasicMaterial({
-            color: 0x6e00ff
+            map: texture2
         }),
         new THREE.MeshBasicMaterial({
-            color: 0x6e00ff
+            map: texture2
         }),
         new THREE.MeshBasicMaterial({
-            color: 0x6e00ff
+            map: texture2
         }),
         new THREE.MeshBasicMaterial({
-            color: 0x6e00ff
+            map: texture2
         }),
         new THREE.MeshBasicMaterial({
-            map: texture
+            map: texture2
         })
     ]);
     //var cubes = [];
-    for (var i = 0; i< 100; i++){
+    for (var i = 0; i< 150; i++){
         cubeRandom = new THREE.Mesh( geometryRand, materialRand );
-        cubeRandom.position.x = getRandomPosition(1, 100);
-        cubeRandom.position.y = getRandomPosition(1, 100);
-        cubeRandom.position.z = getRandomPosition(1, 100);
+        cubeRandom.position.x = getRandomPosition(-100, 100);
+        cubeRandom.position.y = getRandomPosition(-100, 100);
+        cubeRandom.position.z = getRandomPosition(-100, 100);
         scene.add( cubeRandom );
 
     }
@@ -145,7 +150,7 @@ var timeout;
 $('#zoom-in').mousedown(function(){
 
     timeout = setInterval(function(){
-        camera.position.z -=0.1
+        camera.position.z -=0.5
     }, 1);
 
 return false;
@@ -153,7 +158,7 @@ return false;
 
 $('#zoom-out').mousedown(function(){
     timeout = setInterval(function(){
-        camera.position.z +=0.1
+        camera.position.z +=0.5
     }, 1);
     console.log(camera.position.z);
     return false;
@@ -198,8 +203,8 @@ function render() {
     requestAnimationFrame( render );
    // renderer.render( bufferScene, camera, bufferTexture );
     renderer.render( scene, camera );
-    //cube.rotation.x += 0.01;
-    //cube.rotation.y += 0.01;
+    cubeMelkweg.rotation.x += 0.01;
+    cubeMelkweg.rotation.y += 0.01;
     //camera.position.z -=0.01;
 
 }
