@@ -87,11 +87,11 @@ function createCubes(){
         })
     ]);
     //var cubes = [];
-    for (var i = 0; i< 150; i++){
-        cubeRandom = new THREE.Mesh( geometryRand, materialRand );
-        cubeRandom.position.x = getRandomPosition(-100, 100);
-        cubeRandom.position.y = getRandomPosition(-100, 100);
-        cubeRandom.position.z = getRandomPosition(-100, 100);
+    for (var i = 0; i< 5000; i++){
+        var cubeRandom = new THREE.Mesh( geometryRand, materialRand );
+        cubeRandom.position.x = getRandomPosition(-500, 500);
+        cubeRandom.position.y = getRandomPosition(-500, 500);
+        cubeRandom.position.z = getRandomPosition(-100, 500);
         scene.add( cubeRandom );
 
     }
